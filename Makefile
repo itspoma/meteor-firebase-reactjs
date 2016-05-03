@@ -38,7 +38,7 @@ stop: clean-container
 
 run: stop
 	docker run --name=${CONTAINER_NAME} \
-		-p ${PORT}:8080 \
+		-p ${PORT}:3000 \
 		-v $$PWD:${HOME} \
 		-ti -d ${IMAGE_NAME}
 
