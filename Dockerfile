@@ -34,7 +34,19 @@ RUN yum -y install mongo-10gen mongo-10gen-server \
  && service mongod restart
 
 # meteor
-RUN curl -sL https://install.meteor.com | /bin/sh
+#RUN nohup curl -sL https://install.meteor.com | bash - &
+
+# heroku
+#RUN curl -sL https://toolbelt.heroku.com/install.sh | sh
+# ENV PATH $PATH:/usr/local/heroku/bin
+# heroku login
+# heroku keys:remove heroku@docker.local
+# heroku keys:add ~/.ssh/heroku_rsa_key.pub
+# ONBUILD RUN ssh-keygen -t rsa -f ~/.ssh/heroku_rsa_key -C heroku@docker.local
+# ONBUILD RUN echo "Host heroku.com"                        >  ~/.ssh/config
+# ONBUILD RUN echo "    HostName heroku.com"                >> ~/.ssh/config
+# ONBUILD RUN echo "    IdentityFile ~/.ssh/heroku_rsa_key" >> ~/.ssh/config
+# ONBUILD RUN echo "    User git"                           >> ~/.ssh/config
 
 WORKDIR /shared
 

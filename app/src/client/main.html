@@ -13,6 +13,11 @@
 
 <template name="hello">
   <button>Click Me</button>
+
+  {{#each users}}
+    <li>Hello {{name}}></li>
+  {{/each}}
+
   <p>You've pressed the button {{counter}} times.</p>
 </template>
 
